@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         
+    form {
+    margin-top: 50px;
+    margin-left: 236px;
+}
+label {
+    font-family: cursive;
+   
+}
+.alert-danger {
+    color: #842029;
+    margin-top: 50px;
+    background-color: #f8d7da;
+    font-family: cursive;
+    border-color: #f5c2c7;
+        width: 586px;
+    text-align: center;
+    margin-left: 215px;
+}
+.alert-success {
+    color: #0f5132;
+    margin-top: 50px;
+    background-color: #d1e7dd;
+    border-color: #badbcc;
+    font-family: cursive;
+        margin-left: 230px;
+    width: 566px;
+      
+    text-align: center;
+    margin-left: 215px;
+}
+div#hh {
+    border: 2px solid black;
+    margin-top: 30px;
+    width: 560px;
+    margin-left: 230px;
+    height: 100px;
+}
+button {
+    width: 562px;
+    color: black;
+    background-color: dodgerblue;
+    font-family: cursive;
+    font-size: 20px;
+
+}
+input[type="text"] {
+    width: 565px;
+    margin: 15px;
+    height: 42px;
+    margin-left: -5px;
+}
+    </style>
+
+</head>
+<body>
+    {{> dshboard}}
+   
+    {{#if errmsg}}
+        <div class="alert alert-danger">file is not exists</div>
+        {{/if}}
+
+    
+    <form action="/readdata" method="post">
+    <label >Enter File name :   </label><br>
+    <input type="text" name="fname"><br>
+     <button>Load</button>
+
+    </form>
+     {{#if succmsg}}
+        <div class="alert alert-success">Here is ur file data</div>
+        {{/if}}
+    <div id="hh">
+        {{content}}
+    </div>
+</body>
+</html>

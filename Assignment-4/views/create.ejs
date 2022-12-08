@@ -1,0 +1,79 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+      .container{
+   display:flex;
+   flex-direction: row;
+   /* border:2px solid black; */
+   
+
+}
+form.form {
+    /* border: 2px solid black; */
+    width: 618px;
+    /* margin-right: 7px; */
+    /* margin-top: 2px; */
+    padding: 20px;
+    box-shadow: 3px 7px 3px 5px;
+    border-radius: 30px;
+    margin-bottom: 35px;
+}
+img {
+    width: 626px;
+    height: 621px;
+}
+    </style>
+
+    <title>Hello, world!</title>
+  </head>
+<body>
+  
+  <%- include('./partials/nav.ejs')%>
+  <div class="container">
+<form  class="form" method="post" action="/createproduct" >
+    <%if (errmsg) { %>
+        <div class="alert alert-danger"><%= errmsg%></div>
+        <% } %> <%if (succmsg) { %>
+        <div class="alert alert-success"><%= succmsg%></div>
+        <% } %>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Name</label>
+      <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Price</label>
+      <input type="number" name="price" class="form-control" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Quantity</label>
+        <input type="number" name="quantity" class="form-control" id="exampleInputPassword1">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Description</label>
+        <input type="text" name="description" class="form-control" id="exampleInputPassword1">
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Image URL</label>
+        <input type="text" name="img" class="form-control" id="exampleInputPassword1">
+      </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">ADD</button>
+  </form>
+  <div class="img">
+    <img src="https://www.shutterstock.com/image-illustration/shopping-cart-full-food-on-600w-1970926127.jpg" alt="">
+  </div>
+</div>
+
+  </body>
